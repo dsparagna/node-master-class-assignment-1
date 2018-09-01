@@ -42,10 +42,10 @@ app.server = http.createServer((req, res) => {
     // Check for payload if exist
     var decoder = new StringDecoder('utf-8');
     var buffer = '';
-    req.on('data', function (data) {
+    req.on('data', (data)=> {
         buffer += decoder.write(data);
     });
-    req.on('end', function () {
+    req.on('end', ()=> {
         buffer += decoder.end();
 
         // Check the router for a matching path for a handler. If one is not found, use the notFound handler instead.
@@ -86,9 +86,9 @@ app.server.listen(3000, () => {
     console.log('The server is up and running now');
 });
 
-    handle.message;
-    handle.home;
-    handle.notFound;
+handle.message;
+handle.home;
+handle.notFound;
 
 // Define the request router
 var router = {
