@@ -73,6 +73,7 @@ app.server = http.createServer((req, res) => {
             var payloadString = JSON.stringify(payload);
 
             // Return the response
+            res.setHeader('Content-Type', 'application/json');
             res.writeHead(statusCode);
             res.end(payloadString);
             console.log("What is the status code: ", statusCode);
